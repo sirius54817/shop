@@ -12,13 +12,11 @@ const bgImages = [
 export default function LandingPage() {
   const navigate = useNavigate();
   const [bgIndex, setBgIndex] = useState(0);
-  const [direction, setDirection] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setDirection(1);
       setBgIndex((i) => (i + 1) % bgImages.length);
-    }, 2500); // Faster transition - 2.5 seconds
+    }, 3000); // Slightly slower for smoother feel
     return () => clearInterval(interval);
   }, []);
 
@@ -42,18 +40,17 @@ export default function LandingPage() {
 
   return (
     <div style={{ position: 'relative', width: '100vw', minHeight: '100vh', overflow: 'hidden' }}>
-      {/* Background slideshow with carousel animation */}
-      <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 0, pointerEvents: 'none', overflow: 'hidden' }}>
-        <AnimatePresence mode="wait" initial={false} custom={direction}>
+      {/* Background slideshow with smooth crossfade */}
+      <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 0, pointerEvents: 'none' }}>
+        <AnimatePresence mode="wait">
           <motion.img
             key={bgIndex}
             src={bgImages[bgIndex]}
             alt="Dairy background"
-            custom={direction}
-            initial={{ x: direction * 100 + '%' }}
-            animate={{ x: 0 }}
-            exit={{ x: -direction * 100 + '%' }}
-            transition={{ duration: 0.8, ease: 'easeInOut' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 2, ease: [0.4, 0, 0.2, 1] }}
             style={{
               position: 'absolute',
               top: 0,
@@ -80,6 +77,7 @@ export default function LandingPage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
+        transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
         style={{ position: 'relative', zIndex: 2, width: '100vw', minHeight: '100vh', padding: 0, boxSizing: 'border-box' }}
       >
         <div style={{ width: '80vw', margin: '0 auto' }}>
@@ -92,9 +90,9 @@ export default function LandingPage() {
           </header>
           <main style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '2rem 0', boxSizing: 'border-box' }}>
             <motion.h2
-              initial={{ y: -40, opacity: 0 }}
+              initial={{ y: -30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
               style={{ fontSize: '2.2rem', fontWeight: 700, color: '#2d3436', marginBottom: 16, textAlign: 'center' }}
             >
               Welcome to DairyFresh!
@@ -102,7 +100,7 @@ export default function LandingPage() {
             <motion.p
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.7 }}
+              transition={{ delay: 0.3, duration: 1, ease: [0.4, 0, 0.2, 1] }}
               style={{ fontSize: '1.2rem', color: '#636e72', marginBottom: 32, textAlign: 'center', maxWidth: 700 }}
             >
               The best place to buy fresh dairy products online. Enjoy smooth browsing and discover our delicious range!
@@ -113,10 +111,10 @@ export default function LandingPage() {
               {dairyProducts.map((prod, i) => (
                 <motion.div
                   key={prod.name}
-                  whileHover={{ scale: 1.05, boxShadow: '0 8px 32px #e1705555' }}
-                  initial={{ opacity: 0, y: 40 }}
+                  whileHover={{ scale: 1.02, boxShadow: '0 8px 32px #e1705555' }}
+                  initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 + i * 0.15, duration: 0.6 }}
+                  transition={{ delay: 0.5 + i * 0.2, duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
                   style={{ background: 'white', borderRadius: 18, boxShadow: '0 2px 16px #e1705522', padding: 20, width: 260, textAlign: 'center', cursor: 'pointer' }}
                 >
                   <img src={prod.image} alt={prod.name} style={{ width: '100%', height: 140, objectFit: 'cover', borderRadius: 12, marginBottom: 16 }} />
@@ -129,11 +127,11 @@ export default function LandingPage() {
           <motion.footer
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
             viewport={{ once: true }}
             style={{ textAlign: 'center', padding: '2rem', color: '#636e72', width: '100%' }}
           >
-            <p>&copy; 2025 DairyFresh. Fresh dairy products delivered with care ❤️</p>
+            <p>&copy; 2025 DairyFresh. Fresh dairy products delivered with care ❤️ </p>
           </motion.footer>
         </div>
       </motion.div>
