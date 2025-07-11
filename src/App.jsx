@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import ModernLandingPage from './pages/ModernLandingPage';
 import ModernLoginPage from './pages/ModernLoginPage';
 import ModernRegisterPage from './pages/ModernRegisterPage';
+import MainSalesPage from './pages/MainSalesPage';
 import PageTransition from './components/PageTransition';
 import FloatingParticles from './components/FloatingParticles';
 import './App.css';
@@ -27,6 +28,11 @@ function App() {
           <Route path="/register" element={
             <PageTransition>
               <ModernRegisterPage />
+            </PageTransition>
+          } />
+          <Route path="/sales" element={
+            <PageTransition>
+              <MainSalesPage />
             </PageTransition>
           } />
         </Routes>
