@@ -1,0 +1,89 @@
+.admin-page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(102,126,234,0.08);
+}
+.admin-page h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #4f8cff;
+}
+.admin-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+.admin-form input {
+  padding: 0.6rem 1rem;
+  border: 1px solid #e0e7ff;
+  border-radius: 8px;
+  font-size: 1rem;
+  min-width: 120px;
+}
+.admin-form button {
+  background: linear-gradient(90deg, #667eea, #4f8cff);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.admin-form button:hover {
+  background: linear-gradient(90deg, #4f8cff, #667eea);
+}
+.admin-products {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.admin-product-card {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background: #f7faff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 12px rgba(102,126,234,0.06);
+}
+.admin-product-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e0e7ff;
+}
+.admin-product-card strong {
+  font-size: 1.1rem;
+  color: #222;
+}
+.admin-product-card span {
+  color: #4f8cff;
+  margin-left: 0.5rem;
+}
+.admin-product-card p {
+  margin: 0.2rem 0 0.1rem 0;
+  color: #555;
+}
+.admin-product-card small {
+  color: #888;
+}
+.remove-btn {
+  margin-left: auto;
+  background: #ff4f4f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.remove-btn:hover {
+  background: #e02d2d;
+}

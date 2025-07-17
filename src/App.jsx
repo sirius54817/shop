@@ -5,6 +5,7 @@ import ModernLandingPage from './pages/ModernLandingPage';
 import ModernLoginPage from './pages/ModernLoginPage';
 import ModernRegisterPage from './pages/ModernRegisterPage';
 import MainSalesPage from './pages/MainSalesPage';
+import AdminPage from './pages/AdminPage';
 import PageTransition from './components/PageTransition';
 import FloatingParticles from './components/FloatingParticles';
 import './App.css';
@@ -35,6 +36,11 @@ function App() {
               <MainSalesPage />
             </PageTransition>
           } />
+         <Route path="/admin" element={
+           <PageTransition>
+             <AdminPage />
+           </PageTransition>
+         } />
         </Routes>
       </AnimatePresence>
     </div>
