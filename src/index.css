@@ -1,16 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
-:root {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -18,83 +5,50 @@
 }
 
 body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  overflow-x: hidden;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  color: #333;
+  background: #fff;
 }
 
 #root {
-  width: 100%;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.app {
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Selection styling */
-::selection {
-  background: rgba(59, 130, 246, 0.2);
-  color: #1e293b;
-}
-
-/* Focus styles */
-*:focus {
-  outline: none;
-}
-
-*:focus-visible {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
-}
-
-/* Smooth transitions for all elements */
-* {
-  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  line-height: 1.2;
-  color: #1e293b;
+  color: #333;
 }
 
 p {
-  color: #64748b;
-  line-height: 1.6;
+  color: #666;
 }
 
 /* Links */
 a {
-  color: #3b82f6;
+  color: #007bff;
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 
 a:hover {
-  color: #1d4ed8;
+  text-decoration: underline;
 }
 
 /* Buttons */
 button {
   font-family: inherit;
   font-size: 1rem;
-  line-height: 1.5;
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: white;
+  border-radius: 4px;
+}
+
+button:hover {
+  background: #0056b3;
 }
 
 button:disabled {
@@ -106,110 +60,12 @@ button:disabled {
 input, textarea, select {
   font-family: inherit;
   font-size: 1rem;
-  line-height: 1.5;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
-/* Utility classes */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes bounce {
-  0%, 20%, 53%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40%, 43% {
-    transform: translateY(-10px);
-  }
-  70% {
-    transform: translateY(-5px);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* Responsive design helpers */
-@media (max-width: 768px) {
-  html {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  html {
-    font-size: 13px;
-  }
-}
-
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-  }
-  
-  body {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    color: #f8fafc;
-  }
-  
-  p {
-    color: #cbd5e1;
-  }
-}
-
-/* Reduced motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  
-  html {
-    scroll-behavior: auto;
-  }
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #007bff;
 }
