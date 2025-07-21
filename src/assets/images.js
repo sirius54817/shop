@@ -16,7 +16,7 @@ export const dairyImages = {
   },
   backgrounds: {
     loginBg: 'https://images.unsplash.com/photo-1496318556691-3cf882c8b69e?auto=format&fit=crop&w=1200&q=80',
-    registerBg: 'https://images.unsplash.com/photo-1469504512102-900f29606341?auto=format&fit=crop&w=1200&q=80',
+    registerBg: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80',
     landingBg: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80'
   },
   farm: {
